@@ -25,11 +25,13 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="Java的历史  原先是属于SUN公司[Standford University Network 斯坦福网络大学] Sun Microsystem -太阳微电子公司  后来在2010年10月份被Oracle公司[出名的产品 -oracle数据库 - NO.1] 74亿美金收购  - www.oracle.com  前身Oak语言[橡树]，印度尼西亚的爪哇岛[咖啡豆 - javabean]  诞生于">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/2021/07/15/java001/CxTraining/学习日志/imgs/jvm.png">
 <meta property="article:published_time" content="2021-07-15T12:58:04.000Z">
-<meta property="article:modified_time" content="2021-07-15T12:59:03.031Z">
+<meta property="article:modified_time" content="2021-07-15T13:05:46.416Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="java001">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2021/07/15/java001/CxTraining/学习日志/imgs/jvm.png">
   <!-- Canonical links -->
   <link rel="canonical" href="http://example.com/2021/07/15/java001/index.html">
   
@@ -392,10 +394,10 @@
         <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2021/07/15/java001/#comments" class="article-comment-link">评论</a></span>
         
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 1k(字)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 3.5k(字)</span>
 	
 	
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 3(分)</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 13(分)</span>
 	
 
       </div>
@@ -512,6 +514,230 @@
 <li><p>不推荐使用中文的拼音</p>
 </li>
 <li><p>推荐见名知意</p>
+</li>
+</ol>
+</blockquote>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><blockquote>
+<ol>
+<li><p>在D盘根目下新建一个文件HelloWorld.java</p>
+<p>java的源文件就是以.java为后缀的文件</p>
+</li>
+<li><p>记事本打开HelloWorld.java文件</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//编程语言中,只要出现了符号,一定必须都是英文输入法下的</span></span><br><span class="line"><span class="comment">//整体的结构</span></span><br><span class="line"><span class="comment">//java是以类作为基础的单位的 - 定义类</span></span><br><span class="line"><span class="comment">//关键是class</span></span><br><span class="line"><span class="comment">//类的名称要和文件的名称高度保持一致</span></span><br><span class="line"><span class="comment">//&#123;&#125; - block - 块 - 代码块</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloWorld</span></span>&#123;<span class="comment">//1. 类</span></span><br><span class="line">    <span class="comment">//规范 - 缩进四个空格</span></span><br><span class="line">    <span class="comment">//定义一个main方法 - 程序的&quot;大门&quot;</span></span><br><span class="line">    <span class="comment">//运行该程序的时候,jvm就会自动寻找main方法,然后进入到这个main</span></span><br><span class="line">    <span class="comment">//方法中去执行</span></span><br><span class="line">    <span class="comment">//今天先记住语法</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;<span class="comment">//2. 方法</span></span><br><span class="line">       <span class="comment">//方法体,现阶段代码一定是放在方法体内部的.</span></span><br><span class="line">       <span class="comment">//jdk中提供了内置的对象[拥有一些功能],提供好了,开发者就可以直接使用</span></span><br><span class="line">       <span class="comment">//java.lang.System类 - 向控制台输出一句话</span></span><br><span class="line">       System.out.println(<span class="string">&quot;HelloWorld&quot;</span>);<span class="comment">//3. 具体的程序</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+</blockquote>
+<blockquote>
+<ol start="3">
+<li><p>java源代码是不能够直接执行的.因为计算机是不识别java语言程序的.</p>
+<p>需要对.java为后缀的源文件进行一个<strong>编译操作</strong>.如果一旦语法发生了问题,都会导致编译失败.</p>
+<p>假设HelloWorld.java文件是放在D盘根目录下,需要打开终端,然后通过dos命令进入到D盘</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">C:/<span class="title">User</span>/<span class="title">admin</span>&gt;<span class="title">d</span>:</span></span><br><span class="line"><span class="function"><span class="title">D</span>:/&gt;<span class="title">javac</span> <span class="title">HelloWorld.java</span></span></span><br></pre></td></tr></table></figure>
+
+<p><code>效果,javac.exe工具其实就是在调用jdk中的编译器,作用:就是.java源文件编译成.class字节码文件</code></p>
+</li>
+<li><p>思考如何运行一个java程序呢?</p>
+<p>利用java.exe</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">D:/&gt;java HelloWorld</span><br></pre></td></tr></table></figure></li>
+</ol>
+</blockquote>
+<h2 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h2><blockquote>
+<ol>
+<li>编写.java源代码</li>
+<li>javac.exe - 编译</li>
+<li>java.exe - 执行</li>
+</ol>
+</blockquote>
+<h2 id="Java程序的执行的原理"><a href="#Java程序的执行的原理" class="headerlink" title="Java程序的执行的原理"></a>Java程序的执行的原理</h2><p><img src="/2021/07/15/java001/CxTraining/学习日志/imgs/jvm.png">  </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">.java源文件 -&gt; 经过jdk中的编译器,成为.class字节码文件 -&gt; 经过jvm中的解释器[进行逐行翻译(解释)]</span><br><span class="line">-&gt; 机器能够识别的符号</span><br><span class="line"></span><br><span class="line">java属于解释型的语言,<span class="string">&quot;JVM把它YY成以.class字节码为指令的CPU&quot;</span></span><br><span class="line"></span><br><span class="line">编译型语言 - C语言,将这个语言编写的程序直接编译成计算机能够执行的程序.比如C语言写的代码可以直接编译成可执行文件 xx.exe</span><br><span class="line"></span><br><span class="line">C语言执行的性能高于java语言(每次执行都会经过jvm解释器进行解释)</span><br></pre></td></tr></table></figure>
+
+<h1 id="集成开发环境"><a href="#集成开发环境" class="headerlink" title="集成开发环境"></a>集成开发环境</h1><blockquote>
+<ol>
+<li><p>eclipse[日食] - 免费的,IBM公司的产品[收购SUN公司的] </p>
+</li>
+<li><p>idea - 最好的,收费的</p>
+<p>d:/aistar/j03s_student</p>
+</li>
+</ol>
+</blockquote>
+<h1 id="Java中的包-package"><a href="#Java中的包-package" class="headerlink" title="Java中的包-package"></a>Java中的包-package</h1><blockquote>
+<ol>
+<li><p>包是用来管理类的.包的本质就是一个文件夹.包对于类的作用相当于文件夹对于文件的作用.</p>
+</li>
+<li><p>包的命名规则</p>
+<p>2-1. 推荐全部采用小写字母,如果出现多个单词,请你用.隔开,.隔开的每个部分都是一个目录</p>
+<p>2-2. 包的命名推荐采用公司的域名倒置[唯一性] + 项目代号</p>
+<p>​       com.baidu.car   tech.aistar</p>
+<p>2-3. 不用采用java或者javax开头 - 因为jdk中的内置的类和拓展的类都是在java或者javax包中.</p>
+</li>
+<li><p>一旦创建了package,需要在类文件的<strong>首行</strong>采用<strong>package关键字来声明包.</strong></p>
+</li>
+</ol>
+</blockquote>
+<h1 id="java中三种注释"><a href="#java中三种注释" class="headerlink" title="java中三种注释"></a>java中三种注释</h1><blockquote>
+<ol>
+<li><p>单行注释 //   ctrl+/  添加/取消注释</p>
+</li>
+<li><p>多行注释</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> *  多行注释的内容 - 注释的内容是不会经过jdk的编译器的</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure></li>
+<li><p>文档注释</p>
+<blockquote>
+<p>可以生成文档树</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 放在类上面</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">* 放在方法上</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure></blockquote>
+</li>
+</ol>
+</blockquote>
+<h1 id="main方法细节"><a href="#main方法细节" class="headerlink" title="main方法细节"></a>main方法细节</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span>[公开的,公共的] <span class="keyword">static</span>[静态的] - 都是属于后期学习OO中的修饰符</span><br><span class="line">修饰符在使用的时候,之间是没有顺序的.</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;...&#125;    <span class="comment">//ok</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;...&#125;   <span class="comment">//ok</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//jdk8中方法的参数支持可变长参数</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String... args)</span></span>&#123;...&#125;  <span class="comment">//ok</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//args - 我们传给虚拟机的参数</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="输出语句"><a href="#输出语句" class="headerlink" title="输出语句"></a>输出语句</h1><blockquote>
+<ol>
+<li><p>System.out.println(); // 换行</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">System.out.print(<span class="string">&quot;\n&quot;</span>);</span><br></pre></td></tr></table></figure></li>
+<li><p>\n和\r</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> tech.aistar.day01;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 本类用来演示: \n \r</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span>: success</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@date</span>: 2021/7/15 3:18 下午</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">NrDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//相当于是System.out.println(&quot;hello&quot;);</span></span><br><span class="line">        System.out.print(<span class="string">&quot;hello\n&quot;</span>);<span class="comment">//输出之后不换行</span></span><br><span class="line">        System.out.println(<span class="string">&quot;world&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// \n - 当输出完毕之后,光标停在下一行的起始位置 - 换行</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// \r - 当输出完毕之后,光标停在当前行的起始位置 回车</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// \n\r 诞生的场景就是早期的打字机</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//外面的终端执行的结果是 - veyy    √</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//伪终端显示的结果是 - ve</span></span><br><span class="line">        System.out.println(<span class="string">&quot;Loyy\rve&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+</blockquote>
+<h1 id="特殊字符"><a href="#特殊字符" class="headerlink" title="特殊字符"></a>特殊字符</h1><blockquote>
+<p>\ 是代表转义字符</p>
+</blockquote>
+<blockquote>
+<ol>
+<li><p>\n - 当输出完毕之后,光标停在下一行的起始位置 - 换行</p>
+</li>
+<li><p>\r - 当输出完毕之后,光标停在当前行的起始位置 回车</p>
+</li>
+<li><p>\b - 退格</p>
+</li>
+<li><p>\t - 制表符,相当于tab键,默认是空4格</p>
+</li>
+<li><p>双引号</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\<span class="string">&quot;</span></span><br></pre></td></tr></table></figure></li>
+<li><p>单引号</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\<span class="string">&#x27;</span></span><br></pre></td></tr></table></figure></li>
+<li><p>单个\</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\\</span><br></pre></td></tr></table></figure></li>
+</ol>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> tech.aistar.day01;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 本类用来演示: 特殊字符</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span>: success</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@date</span>: 2021/7/15 3:35 下午</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SignDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//\b - 退格</span></span><br><span class="line">        System.out.println(<span class="string">&quot;xxx\byy&quot;</span>);<span class="comment">//xxyy</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//\t - 制表符,相当于tab键,默认是空4格</span></span><br><span class="line">        System.out.println(<span class="string">&quot;hello\tworld&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//输出 james:&quot;success is good boy&quot;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//双引号</span></span><br><span class="line">        System.out.println(<span class="string">&quot;james:\&quot;success is good boy\&quot;&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// \ 转义含义</span></span><br><span class="line">        <span class="comment">//单个\</span></span><br><span class="line">        System.out.println(<span class="string">&quot;D:\\temp\\news&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//输出\\</span></span><br><span class="line">        System.out.println(<span class="string">&quot;\\\\&quot;</span>);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h1><blockquote>
+<p><strong>编程的核心就是从定义变量开始</strong></p>
+<p>java语言是一个<strong>强类型的语言</strong>[在编译期间必须要确定好数据的类型],javascript弱类型的语言</p>
+<p>变量的本质 - “内存中某块区域的名称”,编程的任务就是对数据进行crud+数据分析的操作.</p>
+<p>但是前提是数据需要先进行存储[内存,磁盘(文件,db数据库) - JVM内存</p>
+<p>“JVM对字节码文件进行解释的前奏工作 - 把这个字节码文件加载到自己的内存中,java只能操作内存中的数据”</p>
+<p>java中是如何定义和存储简单的这些数据呢?</p>
+<p><strong>就是通过数据类型以及变量来定义和存储的.</strong></p>
+</blockquote>
+<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><blockquote>
+<p>java中的数据类型有两大块</p>
+<ol>
+<li><p><strong>基本数据类型(8种)</strong> - 编程思想中将void归纳为第9种</p>
+<p>数据类型决定了存储数据的这块空间的大小,并且这个大小一旦确定了,将不能够改变了.</p>
+</li>
+<li><p>对象类型(无数种)</p>
+<p>2-1. 内置对象类型 - System,String - Jdk中提供的类</p>
+<p>2-2. 自定义对象类型 - 自己定义的那些类HelloWorld,SignDemo</p>
+</li>
+</ol>
+</blockquote>
+<h3 id="八种基本数据类型"><a href="#八种基本数据类型" class="headerlink" title="八种基本数据类型"></a>八种基本数据类型</h3><table>
+<thead>
+<tr>
+<th></th>
+<th>名称</th>
+<th>大小</th>
+<th>范围</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>byte</td>
+<td>字节</td>
+<td>占1个字节8bit</td>
+<td>-128~127</td>
+<td>0</td>
+</tr>
+<tr>
+<td>short</td>
+<td>短整型</td>
+<td>占2个字节16bit</td>
+<td>-2^15~2^15-1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>int</td>
+<td>整型</td>
+<td>占4个字节32bit</td>
+<td>-2^31~2^31-1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>long</td>
+<td>长整型</td>
+<td>占8个字节64bit</td>
+<td>-2^63~2^63-1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>float</td>
+<td>单精度浮点数</td>
+<td>占4个字节32bit</td>
+<td>+-(3.4*10^38)</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>double</td>
+<td>双精度浮点数</td>
+<td>占8个字节64bit</td>
+<td>+-(1.798*10^308)</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>char</td>
+<td>字符</td>
+<td>占2个字节16bit</td>
+<td>0~65535</td>
+<td>‘\u0000’空格</td>
+</tr>
+<tr>
+<td>boolean</td>
+<td>布尔类型</td>
+<td>占1个字节8bit</td>
+<td>true/false</td>
+<td>false</td>
+</tr>
+</tbody></table>
+<h2 id="变量的定义"><a href="#变量的定义" class="headerlink" title="变量的定义"></a>变量的定义</h2><blockquote>
+<p>变量的命名的规范请你参考类的命名规范,除了类的命名采用的”大驼峰”,而变量命名采用的是”小驼峰”</p>
+<p>“小驼峰” - 首字母小写,其余每个单词的首字母大写.比如<strong>studentAge</strong></p>
+</blockquote>
+<p><code>语法</code></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">数据类型 变量名 [= 变量值];</span><br></pre></td></tr></table></figure>
+
+<h2 id="剖析变量的背后"><a href="#剖析变量的背后" class="headerlink" title="剖析变量的背后"></a>剖析变量的背后</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> tech.aistar.day01;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 本类用来演示: 变量入门</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span>: success</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@date</span>: 2021/7/15 3:43 下午</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">VarDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//数据类型 变量名 [= 变量值];</span></span><br><span class="line">        <span class="keyword">byte</span> b = <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//代码的背后 - 埋了个&quot;种子&quot;,&quot;发芽&quot;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//1. 数据肯定是存储在JVM内存中的</span></span><br><span class="line">        <span class="comment">//2. 定义在方法内部的变量 - 局部变量[JVM的栈区]</span></span><br><span class="line">        <span class="comment">//3. 局部变量的生命周期是伴随着方法(main)的调用的开始和结束</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//讲解的本质</span></span><br><span class="line">        <span class="comment">//流程</span></span><br><span class="line">        <span class="comment">//1. JVM加载VarDemo.class到内存</span></span><br><span class="line">        <span class="comment">//2. JVM找到main方法想要去执行里面的程序</span></span><br><span class="line">        <span class="comment">//3. 此处需要申请一块区域来保存数据10</span></span><br><span class="line">        <span class="comment">//   3-1. 区域的大小由前面的数据类型来决定的 - int类型 - 区域4个字节32bit的大小</span></span><br><span class="line">        <span class="comment">//   3-2. 栈里面的区域的大小一旦被确定了,就不能改变 - 肯定有的时候会有内存的浪费</span></span><br><span class="line">        <span class="comment">//   3-3. 虽然空间浪费了,但是读取的效率会提高 - 典型的&quot;以空间换时间&quot;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//4. 只要是内存中的空间,这个空间必然会有一个地址,所以变量的存在是为了给这个区域取了个名字</span></span><br><span class="line">        <span class="comment">//   变量是为了方便用户来通过它访问到这个空间中存储的具体的那个值的</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//把整数10赋值给一个int类型的变量a</span></span><br><span class="line">        <span class="keyword">int</span> a = <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line">        System.out.println(a);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// == 比较的就是&quot;坑 - 区域&quot;里面存储的数据</span></span><br><span class="line">        System.out.println(b == a);<span class="comment">//true</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="数据类型的转换"><a href="#数据类型的转换" class="headerlink" title="数据类型的转换"></a>数据类型的转换</h1><blockquote>
+<p>常识规定</p>
+<p>a. java中看到一个整数,默认就是int类型</p>
+<p>b. java中看到一个小数,默认就是double类型</p>
+<p>c. 大的数据类型和小的数据类型进行计算的时候,计算得到的结果是偏向类型大的一方.</p>
+</blockquote>
+<blockquote>
+<ol>
+<li><p>自动转换</p>
+<p>小的数据类型可以自动转换成大的数据类型.</p>
+<p><strong>byte-&gt;short-&gt;int-&gt;long</strong></p>
+<p><strong>char-&gt;int</strong></p>
+<p><strong>int-&gt;double</strong></p>
+</li>
+<li><p>强制类型转换</p>
+<p>大的数据类型转换成小的数据类型的时候,需要进行强制类型转换的操作</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">MaxType 变量<span class="number">1</span> = 值<span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">MinType 变量<span class="number">2</span> = (MinType)变量<span class="number">1</span>;</span><br></pre></td></tr></table></figure></li>
+<li><p>隐式转换</p>
 </li>
 </ol>
 </blockquote>
